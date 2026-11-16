@@ -14,7 +14,8 @@ export default defineConfig({
     screenshot: 'only-on-failure',
     trace: 'retain-on-failure',
     launchOptions: {
-      args: ['--no-sandbox', '--disable-gpu'],
+      executablePath: '/usr/bin/chromium-browser',
+      args: ['--no-sandbox', '--disable-gpu', '--disable-dev-shm-usage'],
     },
   },
   projects: [

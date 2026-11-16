@@ -1,6 +1,7 @@
 const { test, expect } = require('@playwright/test');
 const {
   faLogin,
+  faLogout,
   gotoInstallExtensions,
   installExtension,
   activateExtensions,
