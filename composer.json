@@ -3,7 +3,7 @@
     "description": "FrontAccounting module: Training management (BR-HRM-08). Course catalog, enrollments, certifications, expiry tracking and completion records.",
     "type": "fa-module",
     "license": "GPL-3.0",
-    "version": "1.0.0",
+    "version": "2.4.0",
     "authors": [{"name": "Kevin Fraser", "email": "kevin@ksfraser.com"}],
     "require": {"php": ">=7.3", "ksfraser/related-to-core": "^1.1", "ksfraser/ksf-fa-common": "^1.0"},
     "require-dev": {"phpunit/phpunit": "^9.6"},
