@@ -8,10 +8,10 @@ require_once __DIR__ . '/includes/common.inc';
 require_once __DIR__ . '/includes/events.inc';
 use ksfraser\RelatedTo\DTO\RelatedRecordDto;
 define('SS_ksf_FA_HRM_Training', 193 << 8);
-if (!defined('SA_TRAINING_VIEW')) {
-    define('SA_TRAINING_VIEW', SS_ksf_FA_HRM_Training | 1);
-    define('SA_TRAINING_MANAGE', SS_ksf_FA_HRM_Training | 2);
-    define('SA_TRAINING_ADMIN', SS_ksf_FA_HRM_Training | 3);
+if (!defined('SA_HRM_TRAINING_VIEW')) {
+    define('SA_HRM_TRAINING_VIEW', SS_ksf_FA_HRM_Training | 1);
+    define('SA_HRM_TRAINING_MANAGE', SS_ksf_FA_HRM_Training | 2);
+    define('SA_HRM_TRAINING_ADMIN', SS_ksf_FA_HRM_Training | 3);
 }
 class hooks_ksf_FA_HRM_Training extends hooks {
     const RESPONDERS = array('RELATED_TO_FIELDS', 'TRAINING_RESOLVE', 'TRAINING_FIELDS', 'TRAINING_LIST');
@@ -21,9 +21,9 @@ class hooks_ksf_FA_HRM_Training extends hooks {
     function install_options($app) { }
     function install_access() {
         $security_sections[SS_ksf_FA_HRM_Training] = _("Training");
-        $security_areas['SA_TRAINING_VIEW'] = array(SA_TRAINING_VIEW, _("View training courses"));
-        $security_areas['SA_TRAINING_MANAGE'] = array(SA_TRAINING_MANAGE, _("Manage training courses"));
-        $security_areas['SA_TRAINING_ADMIN'] = array(SA_TRAINING_ADMIN, _("Administer training"));
+        $security_areas['SA_HRM_TRAINING_VIEW'] = array(SA_HRM_TRAINING_VIEW, _("View training courses"));
+        $security_areas['SA_HRM_TRAINING_MANAGE'] = array(SA_HRM_TRAINING_MANAGE, _("Manage training courses"));
+        $security_areas['SA_HRM_TRAINING_ADMIN'] = array(SA_HRM_TRAINING_ADMIN, _("Administer training"));
         return array($security_areas, $security_sections);
     }
     function activate_extension($company, $check_only = true) {
@@ -41,9 +41,9 @@ class hooks_ksf_FA_HRM_Training extends hooks {
     public function getModuleConstants(&$data, $opts = null) {
         $data['constants'] = array(
             'SS_ksf_FA_HRM_Training' => SS_ksf_FA_HRM_Training,
-            'SA_TRAINING_VIEW' => SA_TRAINING_VIEW,
-            'SA_TRAINING_MANAGE' => SA_TRAINING_MANAGE,
-            'SA_TRAINING_ADMIN' => SA_TRAINING_ADMIN,
+            'SA_HRM_TRAINING_VIEW' => SA_HRM_TRAINING_VIEW,
+            'SA_HRM_TRAINING_MANAGE' => SA_HRM_TRAINING_MANAGE,
+            'SA_HRM_TRAINING_ADMIN' => SA_HRM_TRAINING_ADMIN,
         );
         return true;
     }
